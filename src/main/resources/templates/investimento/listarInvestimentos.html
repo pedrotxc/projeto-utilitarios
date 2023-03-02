@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaft.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen,projection" />
+<link rel="stylesheet" href="../style.css">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Lista de Investimentos</title>
+</head>
+<body>
+	<div th:replace="index.html :: #navbar-index"></div>
+	<div th:replace="index.html :: main"></div>
+	<div class="container">
+		<h1 class="texto-principal">Lista de Investimentos</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Tipo de Investimento</th>
+					<th>Valor Total</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="investimento : ${investimentos}">
+					<td><a th:href="@{/investimento/detalhesInvestimento/{tipoInvestimento}(tipoInvestimento=${investimento.tipoInvestimento})}"><span th:text="${investimento.tipoInvestimento}"></span></a></td>
+					<td><span th:text="${investimento.valorInvestido}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="content"></div>
+</body>
+<script type="text/javascript" src="../jquery/jquery-3.6.3.js"></script>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="../script.js"></script>
+</html>

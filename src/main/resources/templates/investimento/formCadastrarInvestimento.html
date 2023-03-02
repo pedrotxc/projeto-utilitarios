@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaft.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen,projection" />
+<link rel="stylesheet" href="../style.css">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Investimento</title>
+</head>
+<body>
+	<div th:replace="index.html :: #navbar-index"></div>
+	<div th:replace="index.html :: main"></div>
+	<form class="container" method="post" action="/investimento/cadastrarInvestimento">
+		<h1 class="texto-principal">Cadastro de Investimento</h1>
+		<div class="row">
+			<div class="input-field col s6">
+				<label for="tipoInvestimento">Nome do Título</label> 
+				<input type="text" id="nomeTitulo" name="nomeTitulo" />
+			</div>
+			<div class="input-field col s6">
+				<select name="tipoInvestimento">
+					<option value="" disabled selected>Tipo de Investimento</option>
+					<option value="RendaFixa">Renda Fixa</option>
+					<option value="RendaVariavel">Renda Variável</option>
+					<option value="FundoImobiliario">Fundo Imobiliário</option>
+				</select>
+				<label>Tipo de Investimento</label>
+			</div>
+			<div class="input-field col s6">
+				<label for="valorInvestido">Valor Investido</label> 
+				<input type="text" id="valorInvestido" name="valorInvestido" />
+			</div>
+			<div class="input-field col s6">
+				<label for="dataOperacao">Data da Operação</label> 
+				<input type="date" id="dataOperacao" placeholder="" name="dataOperacao">
+			</div>
+		</div>
+		<button type="submit" class=" waves-effect waves-light btn">Salvar</button>
+	</form>
+</body>
+<script type="text/javascript" src="../jquery/jquery-3.6.3.js"></script>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="../script.js"></script>
+</html>

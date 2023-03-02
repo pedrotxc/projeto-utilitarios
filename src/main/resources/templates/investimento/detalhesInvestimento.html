@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaft.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="../../materialize/css/materialize.min.css" media="screen,projection"/>
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Lista de Investimentos</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Detalhes do Investimento</h1>
+		<h3>
+			<a href="/investimento/listarInvestimentos" class=" waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Evento</a>
+		</h3>
+
+		<div th:each="investimento : ${investimento}">
+			<div class="row">
+				<p>Tipo de Investimento: <span th:text="${investimento.tipoInvestimento}"></span></p>
+				<p>Valor Aplicado: <span th:text="${investimento.valorInvestido}"></span></p>
+			</div>
+		</div>
+		
+		<form method="post">
+			<label for="nomeTituo">Nome Titulo</label>
+			<input id="nomeTitulo" type="text" value="" name="nomeTitulo"/>
+			<label for="valorAplicado">Valor Aplicado</label>
+			<input id="valorAplicado" type="text" value="" name="valorAplicado"/>
+			<label for="dataOperacao">Data da Operação</label>
+			<input id="dataOperacao" type="date" value="" name="dataOperacao"/>
+			<button type="submit" class=" waves-effect waves-light btn">Adicionar</button>
+		</form>
+	</div>
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="../../materialize/js/materialize.min.js"></script>
+</body>
+</html>

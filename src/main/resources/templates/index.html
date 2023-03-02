@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaft.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+<link rel="stylesheet" href="style.css">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Utilitários</title>
+</head>
+<body>
+	<nav id="navbar-index">
+		<div class="nav-wrapper container">
+			<a href="/" class="brand-logo">Painel de Controle</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="/"><i class="material-icons left">account_circle</i>Usuário</a></li>
+				<li><a href="/"><i class="material-icons left">insert_emoticon</i>Feedback</a></li>
+				<li><a href="/"><i class="material-icons left">help_outline</i>Dúvidas</a></li>
+			</ul>
+		</div>
+	</nav>
+	<main>
+		<ul id="slide-out" class="sidenav sidenav-fixed collapsible">
+			<li>
+				<div class="collapsible-header"><i class="material-icons">attach_money</i>Investimento</div>
+      			<div class="collapsible-body"><i class="material-icons left">chevron_right</i><a href="/investimento/listarInvestimentos">Listar Investimento</a></div>
+      			<div class="collapsible-body"><i class="material-icons left">chevron_right</i><a href="/investimento/cadastrarInvestimento">Cadastrar Investimento</a></div>				
+			</li>
+			<li>
+				<div class="collapsible-header"><i class="material-icons">directions_run</i>Academia</div>
+      			<div class="collapsible-body"><i class="material-icons left">chevron_right</i><a href="#!">Exercícios</a></div>
+			</li>
+		</ul>
+	</main>
+</body>
+<script type="text/javascript" src="jquery/jquery-3.6.3.js"></script>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>
